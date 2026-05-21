@@ -16,10 +16,12 @@ const DashboardRouter = require("./src/routers/Dashboard.route");
 // cors Middleware
 // Allow requests from your React frontend
 // Allow both common Vite ports
-app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174'],
-  credentials: true
-}));
+// Make sure this is at the VERY TOP of your file, right after initializing app
+
+
+// This allows ALL domains (including your new Netlify URL)
+app.use(cors()); 
+
 
 
 //App Level middleware
